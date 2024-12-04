@@ -62,6 +62,8 @@ proc search_right(grid: seq[string], x: int, y: int): int =
 var xmas = 0
 for y in 0 .. max_y:
   for x in 0 .. max_x:
+    if (grid[y][x]) != 'X':
+      continue
     if y >= 3:
       xmas += search_up(grid, x, y)
     if y <= max_y-3:
